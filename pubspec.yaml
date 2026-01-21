@@ -11,7 +11,7 @@ environment:
 
 dependencies:
   collection: ">=1.15.0 <2.0.0"
-  analyzer: ">=6.0.0 <8.0.0"
+  analyzer: ">=6.0.0 <11.0.0"
   args: ">=2.1.0 <3.0.0"
   dart_style: ">=2.2.4 <4.0.0"
   intl: ">=0.17.0"
