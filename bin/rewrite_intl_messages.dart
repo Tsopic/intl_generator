@@ -54,7 +54,7 @@ main(List<String> args) {
     exit(0);
   }
 
-  var formatter = new DartFormatter();
+  var formatter = DartFormatter(languageVersion: DartFormatter.latestLanguageVersion);
   for (var inputFile in rest) {
     var outputFile = replace ? inputFile : outputFileOption;
     var file = new File(inputFile);
