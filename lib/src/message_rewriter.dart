@@ -13,7 +13,7 @@ import 'package:intl_generator/extract_messages.dart';
 /// Return the modified source code. If there are errors parsing, list
 /// [sourceName] in the error message.
 String rewriteMessages(String source, String sourceName,
-    {useStringSubstitution: false}) {
+    {useStringSubstitution = false}) {
   var messages = findMessages(source, sourceName);
   messages.sort((a, b) => a.sourcePosition.compareTo(b.sourcePosition));
 

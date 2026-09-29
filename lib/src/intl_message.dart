@@ -133,7 +133,7 @@ abstract class Message {
   /// for messages with parameters.
   String? checkValidity(MethodInvocation node, List arguments,
       String? outerName, FormalParameterList outerArgs,
-      {bool nameAndArgsGenerated: false, bool examplesRequired: false}) {
+      {bool nameAndArgsGenerated = false, bool examplesRequired = false}) {
     // If we have parameters, we must specify args and name.
     NamedExpression? args = arguments.firstWhereOrNull(
         (each) => each is NamedExpression && each.name.label.name == 'args');
@@ -439,7 +439,7 @@ class MainMessage extends ComplexMessage {
   /// Verify that this looks like a correct Intl.message invocation.
   String? checkValidity(MethodInvocation node, List arguments,
       String? outerName, FormalParameterList outerArgs,
-      {bool nameAndArgsGenerated: false, bool examplesRequired: false}) {
+      {bool nameAndArgsGenerated = false, bool examplesRequired = false}) {
     if (arguments.first is! StringLiteral) {
       return "Intl.message messages must be string literals";
     }
@@ -555,7 +555,7 @@ class MainMessage extends ComplexMessage {
 
   /// Create a string that will recreate this message, optionally
   /// including the compile-time only information desc and examples.
-  String toOriginalCode({bool includeDesc: true, includeExamples: true}) {
+  String toOriginalCode({bool includeDesc = true, includeExamples = true}) {
     var out = new StringBuffer()..write("Intl.message('");
     out.write(expanded(turnInterpolationBackIntoStringForm));
     out.write("', ");
