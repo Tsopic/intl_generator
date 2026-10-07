@@ -253,7 +253,7 @@ abstract class Message {
     var classDeclaration = classNode(node);
     return classDeclaration == null
         ? null
-        : "${classDeclaration.name}_$outerName";
+        : "${classDeclaration.namePart.typeName.lexeme}_$outerName";
   }
 
   /// Turn a value, typically read from a translation file or created out of an
